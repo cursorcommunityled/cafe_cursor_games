@@ -1,0 +1,169 @@
+.screen {
+  flex: 1;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 20px 28px 0;
+  flex-shrink: 0;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gray);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 24px;
+  font-family: var(--font-mono);
+  transition: color 0.2s;
+}
+
+.backBtn:hover {
+  color: var(--white);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+
+.formBody {
+  padding: 0 28px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.fieldGroup {
+  margin-bottom: 24px;
+}
+
+.fieldLabel {
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.fieldInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #333;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  padding: 10px 0;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.fieldInput.filled {
+  border-bottom-color: var(--white);
+}
+
+.fieldInput::placeholder { color: #444; }
+
+.fieldInput:focus {
+  border-bottom-color: var(--white);
+}
+
+.fieldError {
+  border-bottom-color: #e55 !important;
+}
+
+.errorHint {
+  font-size: 11px;
+  color: #e55;
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
+}
+
+.fieldHint {
+  font-size: 10px;
+  color: #555;
+  margin-top: 6px;
+  letter-spacing: 0.06em;
+}
+
+.interestGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.interestTag {
+  border: 1px solid #333;
+  padding: 10px 12px;
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 2px;
+  text-align: center;
+  background: transparent;
+  font-family: var(--font-mono);
+}
+
+.interestTag:hover {
+  border-color: #555;
+  color: var(--white);
+}
+
+.interestTag.selected {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+.interestTag.selected:hover {
+  background: #e8e8e3;
+}
+
+.bottomAction {
+  padding: 20px 28px 60px;
+  flex-shrink: 0;
+}
+
+.signOutBtn {
+  display: block;
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 0;
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.signOutBtn:hover {
+  color: #e55;
+}

@@ -1,0 +1,133 @@
+.screen {
+  flex: 1;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 36px;
+  text-align: center;
+}
+
+.iconWrap {
+  margin-bottom: 28px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0.9;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  color: var(--white);
+  line-height: 1.15;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  max-width: 260px;
+  margin: 0 auto 32px;
+}
+
+.codeBox {
+  background: #111;
+  border: 1px solid #222;
+  padding: 24px 32px;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.codeLabel {
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.urlButton {
+  display: block;
+  width: 100%;
+  padding: 14px 0;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--black);
+  background: var(--white);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+  transition: opacity 0.15s;
+}
+
+.urlButton:hover {
+  opacity: 0.85;
+}
+
+.urlButton:active {
+  opacity: 0.7;
+}
+
+.codeHint {
+  font-size: 10px;
+  color: #555;
+  letter-spacing: 0.06em;
+}
+
+.retryButton {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid #333;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  transition: border-color 0.15s, opacity 0.15s;
+}
+
+.retryButton:hover {
+  border-color: #555;
+}
+
+.retryButton:active {
+  opacity: 0.7;
+}
+
+.bottom {
+  padding: 0 36px 60px;
+  width: 100%;
+}
