@@ -1,0 +1,15 @@
+.wrapper {
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wrapper.visible {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
+
+.up { transform: translateY(20px); }
+.down { transform: translateY(-20px); }
+.left { transform: translateX(20px); }
+.right { transform: translateX(-20px); }
+.fade { transform: none; }

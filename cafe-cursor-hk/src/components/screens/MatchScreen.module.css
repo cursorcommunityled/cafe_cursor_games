@@ -1,0 +1,215 @@
+.screen {
+  flex: 1;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.flash {
+  position: fixed;
+  inset: 0;
+  background: var(--white);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.flashAnimate {
+  animation: flash-in 0.5s ease forwards;
+}
+
+.header {
+  padding: 20px 28px 0;
+  flex-shrink: 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--black);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
+}
+
+.badge::before {
+  content: '●';
+  animation: blink 0.8s step-end infinite;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  color: var(--white);
+  line-height: 1.0;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.sub {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+  margin-bottom: 28px;
+}
+
+.scroll {
+  flex: 1;
+  padding: 0 28px;
+  overflow-y: auto;
+}
+
+.profileCard {
+  border: 1px solid #222;
+  border-radius: 2px;
+  padding: 20px;
+  margin-bottom: 12px;
+  background: #0d0d0d;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.profileCard:hover {
+  border-color: #333;
+}
+
+.me::before {
+  content: 'YOU';
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+  font-family: var(--font-mono);
+}
+
+.them {
+  border-color: #2a2a2a;
+}
+
+.them::before {
+  content: 'THEM';
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--gray);
+  font-family: var(--font-mono);
+}
+
+.cardName {
+  font-size: 20px;
+  color: var(--white);
+  font-family: var(--font-display);
+  margin-bottom: 14px;
+}
+
+.cardDetail {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.cardIcon {
+  font-size: 12px;
+  color: var(--gray);
+  min-width: 14px;
+  margin-top: 1px;
+}
+
+.cardLabel {
+  font-size: 9px;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cardValue {
+  font-size: 12px;
+  color: var(--white);
+  line-height: 1.5;
+  display: block;
+}
+
+.convoSection {
+  margin-top: 20px;
+  margin-bottom: 4px;
+}
+
+.sectionLabel {
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sectionLabel::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #222;
+}
+
+.cardsScroll {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cardsScroll::-webkit-scrollbar { display: none; }
+
+.convoCard {
+  flex-shrink: 0;
+  width: 180px;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 18px 16px;
+  background: #0d0d0d;
+  transition: border-color 0.2s, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: default;
+}
+
+.convoCard:hover {
+  border-color: #444;
+  transform: translateY(-2px);
+}
+
+.convoNum {
+  font-size: 32px;
+  font-family: var(--font-display);
+  color: #222;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.convoText {
+  font-size: 12px;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+.bottomAction {
+  padding: 20px 28px 60px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,131 @@
+.screen {
+  flex: 1;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 36px;
+  text-align: center;
+  width: 100%;
+}
+
+.circle {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+  animation: xp-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.plus {
+  font-size: 42px;
+  font-family: var(--font-display);
+  color: var(--white);
+  line-height: 1;
+}
+
+.labelSmall {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--white);
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.sub {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+.progressSection {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.progressTrack {
+  height: 3px;
+  background: #1e1e1e;
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--white);
+  border-radius: 2px;
+  transition: width 1s ease 0.3s;
+}
+
+.progressHint {
+  margin-top: 10px;
+  font-size: 10px;
+  color: #555;
+  letter-spacing: 0.08em;
+}
+
+.rewardHint {
+  border: 1px solid #222;
+  padding: 16px 20px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: 36px;
+}
+
+.rewardIcon {
+  font-size: 24px;
+  filter: grayscale(1);
+}
+
+.rewardTitle {
+  font-size: 13px;
+  color: var(--white);
+  margin-bottom: 3px;
+  text-align: left;
+}
+
+.rewardSub {
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+  text-align: left;
+}
+
+.actions {
+  width: 100%;
+}

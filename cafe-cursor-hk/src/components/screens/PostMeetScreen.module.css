@@ -1,0 +1,84 @@
+.screen {
+  flex: 1;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 40px 28px 0;
+  flex-shrink: 0;
+}
+
+.emoji {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 16px;
+  filter: grayscale(1);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+  margin-bottom: 32px;
+}
+
+.scroll {
+  flex: 1;
+  padding: 0 28px;
+  overflow-y: auto;
+}
+
+.fieldGroup {
+  margin-bottom: 16px;
+}
+
+.textarea {
+  width: 100%;
+  background: #0d0d0d;
+  border: 1px solid #2a2a2a;
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  padding: 16px;
+  resize: none;
+  outline: none;
+  border-radius: 2px;
+  line-height: 1.6;
+  height: 140px;
+  transition: border-color 0.2s;
+}
+
+.textarea:focus {
+  border-color: #555;
+}
+
+.textarea::placeholder {
+  color: #444;
+}
+
+.hint {
+  font-size: 11px;
+  color: #444;
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+}
+
+.highlight {
+  color: var(--white);
+}
+
+.bottomAction {
+  padding: 20px 28px 60px;
+  flex-shrink: 0;
+}

@@ -1,0 +1,89 @@
+.screen {
+  flex: 1;
+  background: var(--black);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 36px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.coffeeIcon {
+  font-size: 72px;
+  filter: grayscale(1);
+  margin-bottom: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: var(--white);
+  line-height: 1.1;
+  font-weight: 400;
+  text-align: center;
+}
+
+.titleEm {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--gray);
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--gray);
+  line-height: 1.7;
+  margin: 12px 0 20px;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.3em;
+  color: var(--white);
+  border: 1px solid #333;
+  padding: 16px 28px;
+  margin: 20px 0;
+  border-radius: 2px;
+}
+
+.validity {
+  font-size: 10px;
+  color: #444;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.summaryBox {
+  border: 1px solid #222;
+  padding: 16px 20px;
+  border-radius: 2px;
+  font-size: 11px;
+  color: var(--gray);
+  line-height: 1.7;
+  text-align: left;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.summaryTitle {
+  color: var(--white);
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
