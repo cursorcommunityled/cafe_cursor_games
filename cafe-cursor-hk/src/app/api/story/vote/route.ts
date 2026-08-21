@@ -1,4 +1,5 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
+import { requireProfileId } from '@/lib/session';
 import { isUUID, err } from '@/lib/validate';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
@@ -16,10 +17,12 @@ export async function POST(request: Request) {
     return err('Invalid JSON');
   }
 
-  const { storyId, voterProfileId } = body as Record<string, unknown>;
+  const { storyId, voterProfileId: claimedVoter } = body as Record<string, unknown>;
 
   if (!isUUID(storyId)) return err('Invalid storyId');
-  if (!isUUID(voterProfileId)) return err('Invalid voterProfileId');
+  const authed = requireProfileId(request, claimedVoter);
+  if (authed instanceof Response) return authed;
+  const voterProfileId = authed;
 
   const { data: story } = await supabaseAdmin
     .from('bug_stories')
