@@ -1,5 +1,6 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
-import { isUUID, isString, err } from '@/lib/validate';
+import { requireProfileId } from '@/lib/session';
+import { isString, err } from '@/lib/validate';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 export async function POST(request: Request) {
@@ -14,9 +15,11 @@ export async function POST(request: Request) {
     return err('Invalid JSON');
   }
 
-  const { profileId, authorName, text } = body as Record<string, unknown>;
+  const { profileId: claimedId, authorName, text } = body as Record<string, unknown>;
+  const authed = requireProfileId(request, claimedId);
+  if (authed instanceof Response) return authed;
+  const profileId = authed;
 
-  if (!isUUID(profileId)) return err('Invalid profileId');
   if (!isString(authorName, 1, 100)) return err('Author name required (max 100 chars)');
   if (!isString(text, 20, 280)) return err('Story must be 20–280 characters');
 
