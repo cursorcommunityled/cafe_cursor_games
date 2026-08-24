@@ -1,5 +1,6 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
-import { isUUID, err } from '@/lib/validate';
+import { requireProfileId } from '@/lib/session';
+import { err } from '@/lib/validate';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 const XP_THRESHOLD = 30;
@@ -23,8 +24,10 @@ export async function POST(request: Request) {
     return err('Invalid JSON');
   }
 
-  const { profileId } = body as Record<string, unknown>;
-  if (!isUUID(profileId)) return err('Invalid profileId');
+  const { profileId: claimedId } = body as Record<string, unknown>;
+  const authed = requireProfileId(request, claimedId);
+  if (authed instanceof Response) return authed;
+  const profileId = authed;
 
   const { data: profile } = await supabaseAdmin
     .from('profiles')
