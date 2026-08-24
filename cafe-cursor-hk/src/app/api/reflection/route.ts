@@ -1,4 +1,5 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
+import { requireProfileId } from '@/lib/session';
 import { isUUID, isString, err } from '@/lib/validate';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
@@ -14,10 +15,12 @@ export async function POST(request: Request) {
     return err('Invalid JSON');
   }
 
-  const { matchId, profileId, reflection } = body as Record<string, unknown>;
+  const { matchId, profileId: claimedId, reflection } = body as Record<string, unknown>;
 
   if (!isUUID(matchId)) return err('Invalid matchId');
-  if (!isUUID(profileId)) return err('Invalid profileId');
+  const authed = requireProfileId(request, claimedId);
+  if (authed instanceof Response) return authed;
+  const profileId = authed;
   if (!isString(reflection, 1, 2000)) return err('Reflection required (max 2000 chars)');
 
   const { data: match } = await supabaseAdmin

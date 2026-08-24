@@ -1,5 +1,6 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
-import { isUUID, err } from '@/lib/validate';
+import { requireProfileId } from '@/lib/session';
+import { err } from '@/lib/validate';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 export async function POST(request: Request) {
@@ -14,8 +15,10 @@ export async function POST(request: Request) {
     return err('Invalid JSON');
   }
 
-  const { profileId } = body as Record<string, unknown>;
-  if (!isUUID(profileId)) return err('Invalid profileId');
+  const { profileId: claimedId } = body as Record<string, unknown>;
+  const authed = requireProfileId(request, claimedId);
+  if (authed instanceof Response) return authed;
+  const profileId = authed;
 
   // Check if this profile already has a URL assigned
   const { data: existing } = await supabaseAdmin

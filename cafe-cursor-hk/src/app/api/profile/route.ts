@@ -1,4 +1,5 @@
 import { supabaseAdmin } from '@/lib/supabase-admin';
+import { withProfileCookie } from '@/lib/session';
 import { isEmail, isString, isStringArray, err } from '@/lib/validate';
 import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
@@ -65,5 +66,5 @@ export async function POST(request: Request) {
     profile.xp = newXp ?? 5;
   }
 
-  return Response.json({ profile });
+  return withProfileCookie(Response.json({ profile }), profile.id);
 }
